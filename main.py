@@ -23,7 +23,7 @@ class GmailAutomator(object):
 
 
 if __name__ == "__main__":
-    config = yaml.load(open("../config.yaml"))
+    config = yaml.load(open("config.yaml"))
     automator = GmailAutomator(config["username"], config["password"])
     last_friday = datetime.date.today() + relativedelta(weekday=FR(-1))
     automator.actions("amanz", "read", before=last_friday)
