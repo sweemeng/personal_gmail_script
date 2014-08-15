@@ -14,7 +14,7 @@ class GmailAutomator(object):
     def actions(self, mailbox, actions, **filter_):
         if actions is not list:
             actions = [actions]
-        if set(actions).issubset(set("unread", "delete", "spam", "star", "archive")):
+        if set(actions).issubset(set(["unread", "delete", "spam", "star", "archive"])):
             raise Exception("Action Not supported")
         mails = self.client.mailbox(mailbox).mail(**filter_)
         for mail in mails:
