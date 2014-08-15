@@ -27,6 +27,6 @@ if __name__ == "__main__":
     automator = GmailAutomator(config["username"], config["password"])
     last_friday = datetime.date.today() + relativedelta(weekday=FR(-1))
     automator.actions("amanz", "read", before=last_friday)
-    last_month = datetime.date.today() + relativedelta(month=-1)
-    automator.actions("book-sale", "read", before=last_month)
+    last_month = datetime.date.today() + relativedelta(months=-1)
+    automator.actions("Book Sale", "read", before=last_month)
 
